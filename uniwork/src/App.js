@@ -1,11 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+
+import MainPage from './containers/MainPage/MainPage';
+import Navigation from './components/Navigation/Navigation';
+import Contractors from './containers/Contractors/Contractors';
 
 function App() {
   return (
-    <div className="App">
-      Uniwork
+    <div>
+        <BrowserRouter>
+            <Navigation/>
+            <Switch>
+                <Route path={'/'} exact component={MainPage}/>
+                <Route path={'/contractors'} component={Contractors}/>
+            </Switch>
+        </BrowserRouter>
     </div>
   );
 }
