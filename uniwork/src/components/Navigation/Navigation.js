@@ -11,6 +11,9 @@ const Navigation = (props) => {
                 <NavigationItem link={'/contractors'}>
                     Исполнители
                 </NavigationItem>
+                <NavigationItem link={'/customers'}>
+                    Заказчики
+                </NavigationItem>
             </ul>
         </div>
     );
