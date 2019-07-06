@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class MainPage extends Component {
+class Contractors extends Component {
     render() {
         return (
             <div>
-                Главная страница
+                Тут скоро будут заказчики
             </div>
         );
     }
 }
 
-export default MainPage;
+export default Contractors;
