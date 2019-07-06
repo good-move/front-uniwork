@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './Contractor.css';
+
 const Contractor = props => {
     return (
-        <div onClick={props.onClick}>
+        <div className={styles.contractor}>
             <ul>
                 <li>
                     {`${props.lastName} ${props.name} ${props.middleName}`}
@@ -12,6 +14,7 @@ const Contractor = props => {
                     {props.education}
                 </li>
             </ul>
+            <button onClick={props.onClick}>Learn more</button>
         </div>
     );
 };
@@ -22,6 +25,7 @@ Contractor.propTypes = {
     lastName: PropTypes.string,
     education: PropTypes.string,
     onClick: PropTypes.func,
+    skills: PropTypes.array,
 };
 
 export default Contractor;

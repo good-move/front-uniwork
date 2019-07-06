@@ -10,6 +10,13 @@ const data = [{
     education: 'ФИТ НГУ',
     organization: 'Яндекс Маркет Лаб.',
     type: 'Исполнитель',
+    skills: [{
+        id: 0,
+        topicType: 'программирование'
+    }, {
+        id: 1,
+        topicType: 'математика'
+    }]
 },{
     id: 2,
     login: 'katarinish2',
@@ -20,6 +27,13 @@ const data = [{
     education: 'ФИТ НГУ выпуск 2020',
     organization: 'Яндекс Маркет Лаб.',
     type: 'Исполнитель',
+    skills: [{
+        id: 0,
+        topicType: 'программирование'
+    }, {
+        id: 2,
+        topicType: 'теория алгоритмов'
+    }]
 }];
 
 const fetchContractors = () => ({
@@ -33,6 +47,15 @@ const fetchContractorsSuccess = (contractors) => ({
 
 const fetchContractorsFailure = () => ({
    type: actionTypes.FETCH_CONTRACTORS_FAILURE,
+});
+
+export const closeModalContractor = () => ({
+    type: actionTypes.CLOSE_MODAL_CONTRACTOR
+});
+
+export const openModalContractor = (contractor) => ({
+    type: actionTypes.OPEN_MODAL_CONTRACTOR,
+    contractor
 });
 
 export const initContractors = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Contractor from './Contractor/Contractor';
 
-const ContractorsList = ({contractors}) => {
+const ContractorsList = ({contractors, handleOpenContractor}) => {
 
     const updatedContractors = contractors.map(contractor => {
         return <Contractor
@@ -11,7 +11,8 @@ const ContractorsList = ({contractors}) => {
             middleName={contractor.middle_name}
             lastName={contractor.last_name}
             education={contractor.education}
-            onClick={null}/>
+            skills={contractor.skills}
+            onClick={(e) => handleOpenContractor(e, contractor.login)}/>
     });
 
     return (
@@ -23,6 +24,7 @@ const ContractorsList = ({contractors}) => {
 
 ContractorsList.propTypes = {
     contractors: PropTypes.array,
+    handleOpenContractor: PropTypes.func,
 };
 
 export default ContractorsList;
