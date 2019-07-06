@@ -2,9 +2,8 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utils';
 
 const initialState = {
-    title: 'constructor title!',
     isLoading: false,
-    contractors: null,
+    contractors: [],
 };
 
 const fetchContractors = (state, action) => {
@@ -13,10 +12,27 @@ const fetchContractors = (state, action) => {
     });
 };
 
+const fetchContractorsSuccess = (state, action) => {
+    return updateObject(state, {
+        isLoading: false,
+        contractors: action.contractors,
+    });
+};
+
+const fetchContractorsFailure = (state, action) => {
+    return updateObject(state, {
+        isLoading: false,
+    });
+};
+
 export default (state = initialState, action) => {
     switch (action.type) {
         case (actionTypes.FETCH_CONTRACTORS):
             return fetchContractors(state, action);
+        case (actionTypes.FETCH_CONTRACTORS_SUCCESS):
+            return fetchContractorsSuccess(state, action);
+        case (actionTypes.FETCH_CONTRACTORS_FAILURE):
+            return fetchContractorsFailure(state, action);
         default:
             return state;
     }

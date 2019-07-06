@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 import * as actions from '../../store/actions/index';
+import ContractorsList from '../../components/ContractorsList/ContractorsList';
 
 class Contractors extends Component {
     componentWillMount() {
@@ -11,18 +12,23 @@ class Contractors extends Component {
     }
 
     render() {
+        let contractorsList = <ContractorsList contractors={this.props.contractors}/>;
+        if (this.props.isLoading) {
+            contractorsList = <Spinner/>;
+        }
+
         return (
             <div>
-                Тут скоро будут заказчики
-                {this.props.title}
-                <Spinner/>
+                <h2>Исполнители</h2>
+                {contractorsList}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    title: state.contractors.title,
+    contractors: state.contractors.contractors,
+    isLoading: state.contractors.isLoading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
