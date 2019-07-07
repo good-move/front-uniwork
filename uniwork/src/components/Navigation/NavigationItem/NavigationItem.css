@@ -1,3 +1,13 @@
+.navItem {
+  text-decoration: none;
+  color: #8b8b8b;
+  margin-right: 20px;
+}
+
 .active {
-    color: red;
+    color: black;
+}
+
+.navItem:hover {
+  color: #4a4a4a;
 }

@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import Header from "../../layout/header/Header";
 
 class MainPage extends Component {
     render() {
         return (
             <div>
-                Главная страница
+              <Header/>
+              Главная страница
             </div>
         );
     }

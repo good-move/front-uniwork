@@ -7,8 +7,11 @@ import Modal from '../../components/UI/Modal/Modal';
 import ContractorInfo from '../../components/ContractorsList/ContractorInfo/ContractorInfo';
 
 import * as actions from '../../store/actions/index';
+
 import BroadcastApi from '../../utils/api';
 import * as chatApi from '../../utils/api';
+import Header from "../../layout/header/Header";
+
 
 class Contractors extends Component {
     componentWillMount() {
@@ -55,6 +58,7 @@ class Contractors extends Component {
                         : null
                     }
                 </Modal>
+              <Header/>
                 <h2>Исполнители</h2>
                 {contractorsList}
             </div>

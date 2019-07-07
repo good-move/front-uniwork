@@ -15,10 +15,11 @@ const ContractorsList = ({contractors, handleOpenContractor}) => {
             onClick={(e) => handleOpenContractor(e, contractor.login)}/>
     });
 
-    return (
-        <div>
-            {updatedContractors}
-        </div>
+    return (<div>
+      <div>
+        {updatedContractors}
+      </div>
+    </div>
     );
 };
 
