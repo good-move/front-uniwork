@@ -24,3 +24,6 @@ export const SET_VIDEO_TIME = 'SET_VIDEO_TIME';
 export const SET_VIDEO = 'SET_VIDEO';
 export const SET_WORDS = 'SET_WORDS';
 
+export const JOINING = 'JOINING';
+export const DISCONNECTED = 'DISCONNECTED';
+export const JOINED = 'JOINED';

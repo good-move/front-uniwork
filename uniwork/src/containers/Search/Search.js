@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
 import SearchForm from '../../components/SearchForm/SearchForm';
+import BroadcastApi from '../../utils/api';
 
 import styles from './Search.css';
 import * as actions from '../../store/actions/index';
@@ -27,6 +28,10 @@ class Search extends Component {
     this.setState({
       main: 'users',
     });
+  }
+
+  createChat() {
+    // BroadcastApi.join();
   }
 
   submitSearchFormHandler = (query) => {

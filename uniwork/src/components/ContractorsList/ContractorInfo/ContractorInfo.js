@@ -15,7 +15,7 @@ const ContractorInfo = props => {
                 <Skills skills={props.skills}/>
                 <li>{props.birth_date}</li>
             </ul>
-            <button onClick={() => props.history.push('/')}>Связаться</button>
+            <button onClick={props.onClick}>Связаться</button>
         </div>
     );
 };
