@@ -1,0 +1,16 @@
+.spinnerWrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.suggestionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.videoResults {
+  text-align: center;
+}

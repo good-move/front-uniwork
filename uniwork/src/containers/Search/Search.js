@@ -8,6 +8,7 @@ import styles from './Search.css';
 import * as actions from '../../store/actions/index';
 import {Route} from 'react-router';
 import UsersResults from '../../components/UsersResults/UsersResults';
+import VideoResults from '../../components/VideoResults/VideoResults';
 
 class Search extends Component {
   state = {
@@ -34,7 +35,10 @@ class Search extends Component {
 
   onMainSelectChange = (event) => {
     event.preventDefault();
-    console.log(event.target.value);
+
+    if (this.props.match.url !== 'search') {
+      this.props.history.replace('/search');
+    }
 
     if (event.target.value === 'users') {
       this.props.setUsersSearch();
@@ -69,6 +73,11 @@ class Search extends Component {
     }
   };
 
+  findMore = (videoId) => {
+    console.log(videoId);
+    this.props.history.push("/video/" + videoId);
+  };
+
   render() {
     const alterSelect = this.props.isUsersSearch
       ? this.state.options.users
@@ -91,7 +100,10 @@ class Search extends Component {
         />
         <Route
           path={`${this.props.match.url}/videos`}
-          component={() => <UsersResults users={this.props.videos}/>}
+          component={() => <VideoResults
+            isLoading={this.props.isFetching}
+            videos={this.props.videos}
+            itemClickHandler={this.findMore}/>}
         />
       </div>
     );
@@ -102,6 +114,7 @@ const mapStateToProps = (state) => ({
   isUsersSearch: state.search.isUserSearch,
   users: state.search.users,
   videos: state.search.videos,
+  isFetching: state.search.isFetching,
 });
 
 const mapDispatchToProps = (dispatch) => ({

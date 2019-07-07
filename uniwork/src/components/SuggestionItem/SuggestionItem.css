@@ -1,0 +1,16 @@
+.SuggestionItem {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+    width: fit-content;
+    max-width: 500px;
+}
+
+.VideoPlayer {
+    display: block;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.Description {
+}

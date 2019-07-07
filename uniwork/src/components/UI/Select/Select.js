@@ -5,14 +5,14 @@ const DICTIONARY = {
   users: 'Исполнители',
   courses: 'Видеокурсы',
   topics: 'Компетенции',
-  organizations: 'Организации',
+  organizations: 'Образование',
   courseName: 'Название курса',
-  inDepth: 'Слову'
+  inDepth: 'Слову',
+  video: 'Видео'
 };
 
 const Select = props => {
   const options = props.options.map(option => {
-    console.log(option);
     return (<option
       value={option}
       key={Math.random()}>

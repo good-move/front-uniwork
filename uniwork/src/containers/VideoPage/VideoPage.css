@@ -1,0 +1,13 @@
+.VideoWrapper {
+  display: block;
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.FormWrapper {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 50px;
+}

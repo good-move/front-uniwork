@@ -19,3 +19,8 @@ export const SEARCH_FOR_C_NAME = 'SEARCH_FOR_C_NAME';
 export const SEARCH_FOR_DEPTH = 'SEARCH_FOR_DEPTH';
 
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+
+export const SET_VIDEO_TIME = 'SET_VIDEO_TIME';
+export const SET_VIDEO = 'SET_VIDEO';
+export const SET_WORDS = 'SET_WORDS';
+

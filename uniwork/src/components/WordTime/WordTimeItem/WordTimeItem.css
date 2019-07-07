@@ -1,0 +1,18 @@
+.WordTimeItem {
+    display: flex;
+    border: 1px solid black;
+    min-width: 100px;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 12px 20px;
+}
+
+.Time {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.WordTimeItem button {
+    outline: none;
+    cursor: pointer;
+}
