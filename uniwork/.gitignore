@@ -19,4 +19,4 @@ package-lock.json
 /build
 
 .vscode
-.idea
+.idea/
