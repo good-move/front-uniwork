@@ -27,6 +27,7 @@ function App() {
           <Route path={'/accounts/:id'} component={ PersonalAccount } />
           <Route path={'/courses/:id'} component={ CourseInfo } />
           <Route exact path={'/course/add'} component={ AddCourseForm } />
+          <Route path={'/video/:id'} component={VideoPage}/>
         </Switch>
       </BrowserRouter>
     </div>
