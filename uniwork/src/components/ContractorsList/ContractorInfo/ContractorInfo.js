@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Skills from './Skills/Skills';
+import {withRouter} from 'react-router-dom';
 
 const ContractorInfo = props => {
     return (
@@ -14,7 +15,7 @@ const ContractorInfo = props => {
                 <Skills skills={props.skills}/>
                 <li>{props.birth_date}</li>
             </ul>
-            <button onClick={props.onClick}>Связаться</button>
+            <button onClick={() => props.history.push('/')}>Связаться</button>
         </div>
     );
 };
@@ -30,4 +31,4 @@ ContractorInfo.propTypes = {
     onClick: PropTypes.func,
 };
 
-export default ContractorInfo;
+export default withRouter(ContractorInfo);

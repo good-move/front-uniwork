@@ -1,9 +1,11 @@
 import React from 'react';
 import NavigationItem from './NavigationItem/NavigationItem';
 
+import styles from './Navigation.css';
+
 const Navigation = (props) => {
     return (
-        <div>
+        <div className={null}>
             <ul>
                 <NavigationItem link={'/'}>
                     Главная
@@ -13,6 +15,9 @@ const Navigation = (props) => {
                 </NavigationItem>
                 <NavigationItem link={'/customers'}>
                     Заказчики
+                </NavigationItem>
+                <NavigationItem link={'/search'}>
+                  Поиск
                 </NavigationItem>
             </ul>
         </div>

@@ -6,6 +6,7 @@ import Navigation from './components/Navigation/Navigation';
 import Contractors from './containers/Contractors/Contractors';
 import Customers from './containers/Customers/Customers';
 import CustomerInfo from './components/CustomerInfo/CustomerInfo';
+import Search from './containers/Search/Search';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path={'/customers'} component={ Customers } />
           <Route path={'/contractors'} component={ Contractors } />
           <Route path={'/customers/:id/info'} component={ CustomerInfo } />
+          <Route path={'/search'} component={ Search }/>
         </Switch>
       </BrowserRouter>
     </div>
