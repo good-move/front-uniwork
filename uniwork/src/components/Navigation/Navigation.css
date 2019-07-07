@@ -1,0 +1,13 @@
+.nav {
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainNav {
+  display: inline-block;
+}
+
+.extraNav {
+  display: inline-block;
+}

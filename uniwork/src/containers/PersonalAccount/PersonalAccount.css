@@ -1,0 +1,14 @@
+.personalAccount__layout {
+  padding: 30px 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.personalAccount__personalInfo {
+  display: inline-block;
+}
+
+.personalAccount__actions {
+  display: inline-block;
+  vertical-align: top;
+}

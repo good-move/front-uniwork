@@ -1,0 +1,14 @@
+.courseInfo__layout {
+  padding: 30px 48px;
+}
+
+.topicItem {
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(0, 88, 246, 0.12);
+  display: inline-block;
+}
+
+.courseInfo__infoItem {
+  margin-bottom: 20px;
+}
