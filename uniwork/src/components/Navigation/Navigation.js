@@ -15,7 +15,10 @@ const Navigation = (props) => {
             </NavigationItem>
             <NavigationItem link={'/search'}>
                   Поиск
-                </NavigationItem>
+            </NavigationItem>
+            <NavigationItem link={'/chat'}>
+              Чат
+            </NavigationItem>
           </div>
           <div className={styles.extraNav}>
             <NavigationItem link={'/signin'}>

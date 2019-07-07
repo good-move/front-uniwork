@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {BrowserRouter, withRouter} from 'react-router-dom';
 
 import SearchForm from '../../components/SearchForm/SearchForm';
 import BroadcastApi from '../../utils/api';
@@ -11,6 +11,7 @@ import {Route} from 'react-router';
 import UsersResults from '../../components/UsersResults/UsersResults';
 import VideoResults from '../../components/VideoResults/VideoResults';
 import CoursesResults from '../../components/CoursesResults/CoursesResults';
+import Navigation from '../../components/Navigation/Navigation';
 
 class Search extends Component {
   state = {

@@ -12,6 +12,8 @@ import SignInPage from "./containers/SignInPage/SignInPage";
 import PersonalAccount from "./containers/PersonalAccount/PersonalAccount";
 import CourseInfo from "./components/CourseInfo/CourseInfo";
 import AddCourseForm from "./components/AddCourseForm/AddCourseForm";
+import Chat from './containers/Chat/Chat';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
           <Route path={'/courses/:id'} component={ CourseInfo } />
           <Route exact path={'/course/add'} component={ AddCourseForm } />
           <Route path={'/video/:id'} component={VideoPage}/>
+          <Route path={'/chat'} component={Chat}/>
         </Switch>
       </BrowserRouter>
     </div>

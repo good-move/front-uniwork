@@ -27,3 +27,7 @@ export const SET_WORDS = 'SET_WORDS';
 export const JOINING = 'JOINING';
 export const DISCONNECTED = 'DISCONNECTED';
 export const JOINED = 'JOINED';
+
+export const SET_MESSAGE = 'SET_MESSAGE';
+export const CLEAR_MESSAGE = 'CLEAR_MESSAGE';
+export const SEND_MESSAGE = 'SEND_MESSAGE';
