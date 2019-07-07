@@ -1,0 +1,18 @@
+.Form {
+    min-width: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+.Wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Form input {
+    outline: none;
+    margin-right: 10px;
+    display: block;
+    width: 60%;
+    padding: 12px;
+}

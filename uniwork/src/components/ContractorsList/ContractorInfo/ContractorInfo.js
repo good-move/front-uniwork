@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Skills from './Skills/Skills';
+import {withRouter} from 'react-router-dom';
 
 const ContractorInfo = props => {
     return (
@@ -30,4 +31,4 @@ ContractorInfo.propTypes = {
     onClick: PropTypes.func,
 };
 
-export default ContractorInfo;
+export default withRouter(ContractorInfo);

@@ -7,11 +7,19 @@ import Modal from '../../components/UI/Modal/Modal';
 import ContractorInfo from '../../components/ContractorsList/ContractorInfo/ContractorInfo';
 
 import * as actions from '../../store/actions/index';
+
+import BroadcastApi from '../../utils/api';
+import * as chatApi from '../../utils/api';
 import Header from "../../layout/header/Header";
+
 
 class Contractors extends Component {
     componentWillMount() {
         this.props.onContractorsInit();
+    }
+
+    createChat() {
+     // BroadcastApi.join();
     }
 
     openContractorHandler = (event, login) => {
@@ -24,6 +32,8 @@ class Contractors extends Component {
     contactPersonHandler = (event) => {
         event.preventDefault();
         const login = this.props.activeContractor.login;
+
+        // chatApi.
 
         console.log('[СВЯЗЫВАЕМСЯ С ]' + login);
     };
@@ -67,6 +77,7 @@ const mapDispatchToProps = (dispatch) => ({
     onContractorsInit: () => dispatch(actions.initContractors()),
     onModalClose: () => dispatch(actions.closeModalContractor()),
     onOpenContractor: (contractor) => dispatch(actions.openModalContractor(contractor)),
+    createChat: () => dispatch(actions.joinBroadcast())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contractors);

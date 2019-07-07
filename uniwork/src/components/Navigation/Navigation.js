@@ -2,6 +2,8 @@ import React from 'react';
 import NavigationItem from './NavigationItem/NavigationItem';
 import styles from './Navigation.css';
 
+import styles from './Navigation.css';
+
 const Navigation = (props) => {
     return (
         <div className={styles.nav}>
@@ -12,6 +14,9 @@ const Navigation = (props) => {
             <NavigationItem link={'/contractors'}>
               Исполнители
             </NavigationItem>
+            <NavigationItem link={'/search'}>
+                  Поиск
+                </NavigationItem>
           </div>
           <div className={styles.extraNav}>
             <NavigationItem link={'/signin'}>
