@@ -9,6 +9,7 @@ import * as actions from '../../store/actions/index';
 import {Route} from 'react-router';
 import UsersResults from '../../components/UsersResults/UsersResults';
 import VideoResults from '../../components/VideoResults/VideoResults';
+import CoursesResults from '../../components/CoursesResults/CoursesResults';
 
 class Search extends Component {
   state = {
@@ -22,6 +23,10 @@ class Search extends Component {
 
   componentWillMount() {
     this.props.clearSearch();
+    this.props.setUsersSearch();
+    this.setState({
+      main: 'users',
+    });
   }
 
   submitSearchFormHandler = (query) => {
@@ -29,7 +34,11 @@ class Search extends Component {
     if (this.props.isUsersSearch) {
       this.props.history.replace(`${this.props.match.url}/users`);
     } else {
-      this.props.history.replace(`${this.props.match.url}/videos`);
+      if (this.props.isSearchedByCoursename) {
+        this.props.history.replace(`${this.props.match.url}/courses`);
+      } else {
+        this.props.history.replace(`${this.props.match.url}/videos`);
+      }
     }
   };
 
@@ -96,7 +105,11 @@ class Search extends Component {
         />
         <Route
           path={`${this.props.match.url}/users`}
-          component={() => <UsersResults users={this.props.users}/>}
+          component={() => <UsersResults users={this.props.users} />}
+        />
+        <Route
+          path={`${this.props.match.url}/courses`}
+          component={() => <CoursesResults courses={this.props.courses} />}
         />
         <Route
           path={`${this.props.match.url}/videos`}
@@ -114,7 +127,9 @@ const mapStateToProps = (state) => ({
   isUsersSearch: state.search.isUserSearch,
   users: state.search.users,
   videos: state.search.videos,
+  courses: state.search.courses,
   isFetching: state.search.isFetching,
+  isSearchedByCoursename: state.search.isSearchedByCoursename,
 });
 
 const mapDispatchToProps = (dispatch) => ({

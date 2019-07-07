@@ -62,6 +62,34 @@ const videos = [{
   }]
 }];
 
+const courses = [{
+  id: 1,
+  name: 'Программирование на java',
+  personId: 1,
+  topics: [{
+    id: 0,
+    topicType: "PROGRAMMING"
+  }],
+  videos: [{
+      id: 0,
+      title: 'Знакомство с java',
+      url: 'https://storage.yandexcloud.net/polyhack/what-is-internet.mp4'
+    }]
+}, {
+  id: 2,
+  name: 'Программирование на C++',
+  personId: 2,
+  topics: [{
+    id: 0,
+    topicType: "PROGRAMMING"
+  }],
+  videos: [{
+    id: 0,
+    title: 'Знакомство с C++',
+    url: 'https://storage.yandexcloud.net/polyhack/what-is-internet.mp4'
+  }]
+}];
+
 const fetchSearchResults = () => ({
   type: actionTypes.FETCH_SEARCH_RESULTS
 });
@@ -84,7 +112,11 @@ export const findSuggestions = (query) => {
       if (searchState.isUserSearch) {
         dispatch(fetchSearchSuccess(users));
       } else {
-        dispatch(fetchSearchSuccess(videos));
+        if (searchState.isSearchedByCoursename) {
+          dispatch(fetchSearchSuccess(courses));
+        } else {
+          dispatch(fetchSearchSuccess(videos));
+        }
       }
     }, 2000);
   }

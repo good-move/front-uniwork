@@ -8,6 +8,7 @@ const initialState = {
   isSearchedByCoursename: true,
   users: [],
   videos: [],
+  courses: [],
   isFetching: false,
 };
 
@@ -49,11 +50,19 @@ const fetchSearchSuccess = (state, action) => {
       users: action.data,
     });
   } else {
-    return updateObject(state, {
-      isFetching: false,
-      query: '',
-      videos: action.data,
-    });
+    if (state.isSearchedByCoursename) {
+      return updateObject(state, {
+        isFetching: false,
+        query: '',
+        courses: action.data,
+      });
+    } else {
+      return updateObject(state, {
+        isFetching: false,
+        query: '',
+        videos: action.data,
+      });
+    }
   }
 };
 
